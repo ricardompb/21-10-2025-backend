@@ -8,7 +8,7 @@ import {
   // Query,
   Body,
 } from '@nestjs/common';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiProperty } from '@nestjs/swagger';
 import { Sequelize } from 'sequelize-typescript';
 
 class Pessoa {
@@ -20,6 +20,7 @@ class Pessoa {
   idade: number;
 }
 
+@ApiBearerAuth()
 @Controller('pessoa')
 export class PessoaController {
   //   @Get('/')
